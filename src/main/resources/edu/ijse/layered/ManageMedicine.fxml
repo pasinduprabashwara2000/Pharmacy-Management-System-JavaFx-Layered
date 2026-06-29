@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1093.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.controller.MedicineController">
+    <children>
+
+        <!-- Medicine Name -->
+        <Label layoutX="31.0" layoutY="19.0" prefHeight="38.0" prefWidth="165.0" text="Name :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="191.0" layoutY="19.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter medicine name" />
+
+        <!-- Category -->
+        <Label layoutX="31.0" layoutY="84.0" prefHeight="38.0" prefWidth="165.0" text="Category :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <ComboBox fx:id="cmbCategory" layoutX="191.0" layoutY="84.0" prefHeight="38.0" prefWidth="320.0" promptText="Select category" />
+
+        <!-- Supplier -->
+        <Label layoutX="31.0" layoutY="148.0" prefHeight="38.0" prefWidth="165.0" text="Supplier :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <ComboBox fx:id="cmbSupplier" layoutX="191.0" layoutY="148.0" prefHeight="38.0" prefWidth="320.0" promptText="Select supplier" />
+
+        <!-- Unit Price -->
+        <Label layoutX="31.0" layoutY="212.0" prefHeight="38.0" prefWidth="165.0" text="Unit Price :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtUnitPrice" layoutX="191.0" layoutY="212.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter unit price" />
+
+        <!-- Qty On Hand -->
+        <Label layoutX="600.0" layoutY="19.0" prefHeight="38.0" prefWidth="165.0" text="Qty On Hand :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtQtyOnHand" layoutX="770.0" layoutY="19.0" prefHeight="38.0" prefWidth="280.0" promptText="Enter quantity" />
+
+        <!-- Expire Date -->
+        <Label layoutX="600.0" layoutY="84.0" prefHeight="38.0" prefWidth="165.0" text="Expire Date :">
+            <font><Font size="16.0" /></font>
+        </Label>
+
+        <!-- Buttons -->
+        <Button fx:id="btnSave" layoutX="32.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="38.0" prefWidth="120.0" styleClass="save-btn" text="Save" />
+        <Button fx:id="btnUpdate" layoutX="171.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="38.0" prefWidth="120.0" styleClass="update-btn" text="Update" />
+        <Button fx:id="btnDelete" layoutX="314.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="38.0" prefWidth="120.0" styleClass="delete-btn" text="Delete" />
+        <Button fx:id="btnReset" layoutX="457.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="38.0" prefWidth="120.0" styleClass="reset-btn" text="Reset" />
+
+        <!-- Table -->
+        <TableView fx:id="tblMedicines" layoutX="32.0" layoutY="360.0" prefHeight="295.0" prefWidth="1009.0">
+            <columns>
+                <TableColumn fx:id="colMedicineId" prefWidth="120.0" text="Medicine ID" />
+                <TableColumn fx:id="colName" prefWidth="200.0" text="Name" />
+                <TableColumn fx:id="colCategory" prefWidth="150.0" text="Category" />
+                <TableColumn fx:id="colSupplier" prefWidth="150.0" text="Supplier" />
+                <TableColumn fx:id="colUnitPrice" prefWidth="120.0" text="Unit Price" />
+                <TableColumn fx:id="colQtyOnHand" prefWidth="120.0" text="Qty On Hand" />
+                <TableColumn fx:id="colExpireDate" prefWidth="149.0" text="Expire Date" />
+            </columns>
+        </TableView>
+      <DatePicker fx:id="datePicker" layoutX="770.0" layoutY="85.0" prefHeight="36.0" prefWidth="280.0" />
+
+    </children>
+</AnchorPane>

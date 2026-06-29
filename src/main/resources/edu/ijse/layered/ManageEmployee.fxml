@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="681.0" prefWidth="1093.0"
+            stylesheets="@css/style.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.ijse.layered.controller.EmployeeController">
+    <children>
+
+        <!-- Full Name -->
+        <Label layoutX="31.0" layoutY="19.0" prefHeight="38.0" prefWidth="165.0" text="Full Name :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtFullName" layoutX="191.0" layoutY="19.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter full name" />
+
+        <!-- Role -->
+        <Label layoutX="31.0" layoutY="84.0" prefHeight="38.0" prefWidth="165.0" text="Role :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <ComboBox fx:id="cmbRole" layoutX="191.0" layoutY="84.0" prefHeight="38.0" prefWidth="320.0" promptText="Select role" />
+
+        <!-- Salary -->
+        <Label layoutX="31.0" layoutY="148.0" prefHeight="38.0" prefWidth="165.0" text="Salary :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtSalary" layoutX="191.0" layoutY="148.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter salary" />
+
+        <!-- Contact No -->
+        <Label layoutX="31.0" layoutY="212.0" prefHeight="38.0" prefWidth="165.0" text="Contact No :">
+            <font><Font size="16.0" /></font>
+        </Label>
+        <TextField fx:id="txtContactNo" layoutX="191.0" layoutY="212.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter contact number" />
+
+        <!-- Buttons -->
+        <Button fx:id="btnSave" layoutX="32.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="38.0" prefWidth="120.0" styleClass="save-btn" text="Save" />
+        <Button fx:id="btnUpdate" layoutX="171.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="38.0" prefWidth="120.0" styleClass="update-btn" text="Update" />
+        <Button fx:id="btnDelete" layoutX="314.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="38.0" prefWidth="120.0" styleClass="delete-btn" text="Delete" />
+        <Button fx:id="btnReset" layoutX="457.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="38.0" prefWidth="120.0" styleClass="reset-btn" text="Reset" />
+
+        <!-- Table -->
+        <TableView fx:id="tblEmployees" layoutX="32.0" layoutY="359.0" prefHeight="294.0" prefWidth="1009.0">
+            <columns>
+                <TableColumn fx:id="colEmployeeId" prefWidth="120.0" text="Employee ID" />
+                <TableColumn fx:id="colFullName" prefWidth="250.0" text="Full Name" />
+                <TableColumn fx:id="colRole" prefWidth="200.0" text="Role" />
+                <TableColumn fx:id="colSalary" prefWidth="180.0" text="Salary" />
+                <TableColumn fx:id="colContactNo" prefWidth="259.0" text="Contact No" />
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

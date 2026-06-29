@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.controller.MainMenuController">
+
+    <children>
+
+        <!-- ═══════════════════════════════════════════
+             LEFT SIDEBAR  (wrapped in ScrollPane)
+        ════════════════════════════════════════════ -->
+        <ScrollPane fx:id="sidebarScroll" fitToWidth="true" hbarPolicy="NEVER" layoutX="0.0" layoutY="0.0" prefHeight="768.0" prefWidth="240.0" styleClass="sidebar-scroll" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <content>
+                <VBox fx:id="sidebar" minHeight="768.0" prefWidth="240.0" styleClass="sidebar">
+
+                    <!-- Brand / Logo Area -->
+                    <VBox spacing="4" styleClass="brand-area">
+                        <Label prefHeight="61.0" prefWidth="63.0" styleClass="brand-icon" text="✚" />
+                        <Label styleClass="brand-name" text="NovaCare" />
+                        <Label styleClass="brand-sub" text="Pharmacy Management System" />
+                    </VBox>
+
+                    <Separator styleClass="sidebar-divider" />
+
+                    <!-- MAIN -->
+                    <VBox spacing="4" styleClass="nav-section">
+                        <Label styleClass="nav-section-label" text="MAIN" />
+
+                        <Button fx:id="btnDashboard" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleDashboard" styleClass="nav-btn, nav-btn-active" text="  Dashboard" />
+
+                        <Button fx:id="btnCategory" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleCategory" styleClass="nav-btn" text="  Category" />
+
+                        <Button fx:id="btnMedicines" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleMedicines" styleClass="nav-btn" text="  Medicines" />
+                    </VBox>
+
+                    <Separator styleClass="sidebar-divider" />
+
+                    <!-- PEOPLE -->
+                    <VBox spacing="4" styleClass="nav-section">
+                        <Label styleClass="nav-section-label" text="PEOPLE" />
+
+                        <Button fx:id="btnCustomers" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleCustomers" styleClass="nav-btn" text="  Customers" />
+
+                        <Button fx:id="btnSuppliers" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleSuppliers" styleClass="nav-btn" text="  Suppliers" />
+
+                        <Button fx:id="btnEmployees" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleEmployees" styleClass="nav-btn" text="  Employees" />
+                    </VBox>
+
+                    <Separator styleClass="sidebar-divider" />
+
+                    <!-- TRANSACTIONS -->
+                    <VBox spacing="4" styleClass="nav-section">
+                        <Label styleClass="nav-section-label" text="TRANSACTIONS" />
+
+                        <Button fx:id="btnOrders" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleOrders" styleClass="nav-btn" text="  Orders" />
+
+                        <Button fx:id="btnPrescriptions" maxWidth="Infinity" mnemonicParsing="false" onAction="#handlePrescriptions" styleClass="nav-btn" text="  Prescriptions" />
+
+                        <Button fx:id="btnReports" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleReports" styleClass="nav-btn" text="  Reports" />
+                    </VBox>
+
+                    <!-- Spacer pushes footer down -->
+                    <VBox minHeight="40.0" VBox.vgrow="ALWAYS" />
+
+                    <Separator styleClass="sidebar-divider" />
+
+                    <!-- User + Logout -->
+                    <VBox spacing="8" styleClass="sidebar-footer">
+                        <HBox spacing="10" styleClass="user-row">
+                            <StackPane styleClass="avatar">
+                                <Label styleClass="avatar-letter" text="A" />
+                            </StackPane>
+                            <VBox spacing="1">
+                                <Label fx:id="lblUserName" styleClass="user-name" text="Admin User" />
+                                <Label styleClass="user-role" text="Administrator" />
+                            </VBox>
+                        </HBox>
+                        <Button fx:id="btnLogout" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-btn" text="  Logout" />
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <!-- ═══════════════════════════════════════════
+             MAIN CONTENT AREA
+        ════════════════════════════════════════════ -->
+        <AnchorPane fx:id="contentArea" layoutX="240.0" layoutY="0.0" prefHeight="768.0" prefWidth="1076.0" styleClass="content-area">
+
+            <!-- Top Bar -->
+            <HBox prefHeight="60.0" prefWidth="1125.0" spacing="12" styleClass="topbar">
+
+                <Label fx:id="lblPageTitle" styleClass="topbar-title" text="Dashboard" />
+
+                <HBox HBox.hgrow="ALWAYS" />
+
+                <Label fx:id="lblDateTime" styleClass="topbar-datetime" text="27 Jun 2026  |  08:30 AM" />
+            </HBox>
+
+            <!-- Dynamic page content loads here -->
+            <StackPane fx:id="pageContent" layoutX="0.0" layoutY="60.0" prefHeight="708.0" prefWidth="1119.0" styleClass="page-content">
+
+                <VBox alignment="CENTER" prefHeight="681.0" prefWidth="1093.0" spacing="16.0" styleClass="welcome-panel">
+                    <Label styleClass="welcome-icon" text="✚" />
+                    <Label styleClass="welcome-title" text="Welcome to NovaCare" />
+                    <Label styleClass="welcome-sub" text="Select a module from the sidebar to get started." />
+                </VBox>
+
+            </StackPane>
+
+        </AnchorPane>
+
+    </children>
+</AnchorPane>

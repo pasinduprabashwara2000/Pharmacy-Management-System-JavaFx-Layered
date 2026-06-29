@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- ── Database Connection ──────────────────────────────── -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pharmacy_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">mysql</property>
+
+        <!-- ── Dialect ──────────────────────────────────────────── -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- ── Connection Pool ──────────────────────────────────── -->
+        <property name="hibernate.connection.pool_size">10</property>
+
+        <!-- ── Schema Auto Management ───────────────────────────── -->
+        <!-- update  → keeps existing data, adds new columns/tables  -->
+        <!-- create  → drops and recreates all tables on startup     -->
+        <!-- validate→ validates schema, no changes made             -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- ── SQL Logging ──────────────────────────────────────── -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- ── Entity Mappings ──────────────────────────────────── -->
+        <mapping class="edu.ijse.layered.entity.Customer" />
+        <mapping class="edu.ijse.layered.entity.Supplier" />
+        <mapping class="edu.ijse.layered.entity.Employee" />
+        <mapping class="edu.ijse.layered.entity.Medicine" />
+
+    </session-factory>
+</hibernate-configuration>
