@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class ReturnDTO {
 
-    private String returnId;
-    private String orderId;
-    private String customerId;
+    private int returnId;
+    private int orderId;
+    private int customerId;
     private String returnDate;
     private double totalRefund;
 

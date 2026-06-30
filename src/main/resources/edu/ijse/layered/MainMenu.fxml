@@ -57,34 +57,37 @@
                     <Separator styleClass="sidebar-divider" />
 
                     <!-- TRANSACTIONS -->
-                    <VBox spacing="4" styleClass="nav-section">
+                    <VBox prefHeight="198.0" prefWidth="233.0" spacing="4" styleClass="nav-section">
                         <Label styleClass="nav-section-label" text="TRANSACTIONS" />
 
-                        <Button fx:id="btnOrders" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleOrders" styleClass="nav-btn" text="  Orders" />
+                        <Button fx:id="btnOrders" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleOrders" styleClass="nav-btn" text="Orders" />
 
-                        <Button fx:id="btnPrescriptions" maxWidth="Infinity" mnemonicParsing="false" onAction="#handlePrescriptions" styleClass="nav-btn" text="  Prescriptions" />
+                        <Button fx:id="btnPayments" maxWidth="Infinity" mnemonicParsing="false" onAction="#handlePayments" styleClass="nav-btn" text="Payments" />
 
-                        <Button fx:id="btnReports" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleReports" styleClass="nav-btn" text="  Reports" />
+                        <Button fx:id="btnReturn" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleReturn" styleClass="nav-btn" text="Return" />
+                  <Button fx:id="btnReports" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleReports" styleClass="nav-btn" text="Reports" />
+   
+                          <Separator styleClass="sidebar-divider" />
                     </VBox>
 
                     <!-- Spacer pushes footer down -->
-                    <VBox minHeight="40.0" VBox.vgrow="ALWAYS" />
-
-                    <Separator styleClass="sidebar-divider" />
-
-                    <!-- User + Logout -->
-                    <VBox spacing="8" styleClass="sidebar-footer">
-                        <HBox spacing="10" styleClass="user-row">
-                            <StackPane styleClass="avatar">
-                                <Label styleClass="avatar-letter" text="A" />
-                            </StackPane>
-                            <VBox spacing="1">
-                                <Label fx:id="lblUserName" styleClass="user-name" text="Admin User" />
-                                <Label styleClass="user-role" text="Administrator" />
-                            </VBox>
-                        </HBox>
-                        <Button fx:id="btnLogout" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-btn" text="  Logout" />
-                    </VBox>
+                    <VBox minHeight="40.0" VBox.vgrow="ALWAYS">
+                  <children>
+      
+                          <!-- User + Logout -->
+                          <VBox spacing="8" styleClass="sidebar-footer">
+                              <HBox spacing="10" styleClass="user-row">
+                                  <StackPane styleClass="avatar">
+                                      <Label styleClass="avatar-letter" text="A" />
+                                  </StackPane>
+                                  <VBox spacing="1">
+                                      <Label fx:id="lblUserName" styleClass="user-name" text="Admin User" />
+                                      <Label styleClass="user-role" text="Administrator" />
+                                  </VBox>
+                              </HBox>
+                              <Button fx:id="btnLogout" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-btn" text="  Logout" />
+                          </VBox>
+                  </children></VBox>
 
                 </VBox>
             </content>

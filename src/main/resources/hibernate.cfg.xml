@@ -6,33 +6,72 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!-- ── Database Connection ──────────────────────────────── -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pharmacy_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">mysql</property>
+        <!-- ========================= -->
+        <!-- Database Connection -->
+        <!-- ========================= -->
 
-        <!-- ── Dialect ──────────────────────────────────────────── -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
 
-        <!-- ── Connection Pool ──────────────────────────────────── -->
-        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/pharmacy_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+        </property>
 
-        <!-- ── Schema Auto Management ───────────────────────────── -->
-        <!-- update  → keeps existing data, adds new columns/tables  -->
-        <!-- create  → drops and recreates all tables on startup     -->
-        <!-- validate→ validates schema, no changes made             -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
 
-        <!-- ── SQL Logging ──────────────────────────────────────── -->
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.connection.password">
+            mysql
+        </property>
 
-        <!-- ── Entity Mappings ──────────────────────────────────── -->
-        <mapping class="edu.ijse.layered.entity.Customer" />
-        <mapping class="edu.ijse.layered.entity.Supplier" />
-        <mapping class="edu.ijse.layered.entity.Employee" />
-        <mapping class="edu.ijse.layered.entity.Medicine" />
+        <!-- ========================= -->
+        <!-- Connection Pool -->
+        <!-- ========================= -->
+
+        <property name="hibernate.connection.pool_size">
+            10
+        </property>
+
+        <!-- ========================= -->
+        <!-- Schema Generation -->
+        <!-- update | create | create-drop | validate -->
+        <!-- ========================= -->
+
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <!-- ========================= -->
+        <!-- SQL Logging -->
+        <!-- ========================= -->
+
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <property name="hibernate.highlight_sql">
+            true
+        </property>
+
+        <!-- ========================= -->
+        <!-- Entity Classes -->
+        <!-- ========================= -->
+
+        <mapping class="edu.ijse.layered.entity.Customer"/>
+        <mapping class="edu.ijse.layered.entity.Supplier"/>
+        <mapping class="edu.ijse.layered.entity.Employee"/>
+        <mapping class="edu.ijse.layered.entity.Category"/>
+        <mapping class="edu.ijse.layered.entity.Medicine"/>
+        <mapping class="edu.ijse.layered.entity.Order"/>
+        <mapping class="edu.ijse.layered.entity.OrderDetails"/>
+        <mapping class="edu.ijse.layered.entity.Payment"/>
+        <mapping class="edu.ijse.layered.entity.Return"/>
 
     </session-factory>
 </hibernate-configuration>

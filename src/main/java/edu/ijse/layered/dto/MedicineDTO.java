@@ -3,17 +3,19 @@ package edu.ijse.layered.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class MedicineDTO {
 
-    private String medicineId;
+    private int medicineId;
     private String name;
-    private String category;
+    private int categoryId;
+    private int supplierId;
     private double unitPrice;
     private int qtyOnHand;
-    private String expireDate;
+    private LocalDate expireDate;
 
 }

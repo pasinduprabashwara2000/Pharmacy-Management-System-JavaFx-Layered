@@ -19,7 +19,8 @@ public class CustomerBOImpl implements CustomerBO {
                 customerDTO.getCustomerId(),
                 customerDTO.getFullName(),
                 customerDTO.getEmail(),
-                customerDTO.getContactNo()
+                customerDTO.getContactNo(),
+                null
         );
 
         return customerDAO.save(customer);
@@ -33,7 +34,8 @@ public class CustomerBOImpl implements CustomerBO {
                 customerDTO.getCustomerId(),
                 customerDTO.getFullName(),
                 customerDTO.getEmail(),
-                customerDTO.getContactNo()
+                customerDTO.getContactNo(),
+                null
         );
 
         return customerDAO.update(customer);

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Table(name = "medicine")
@@ -14,7 +15,7 @@ public class Medicine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String medicineId;
+    private int medicineId;
 
     private String name;
 
@@ -29,5 +30,8 @@ public class Medicine {
     private double unitPrice;
     private int qtyOnHand;
     private String expireDate;
+
+    @OneToMany(mappedBy = "medicine")
+    private List<OrderDetails> orderDetails;
 
 }

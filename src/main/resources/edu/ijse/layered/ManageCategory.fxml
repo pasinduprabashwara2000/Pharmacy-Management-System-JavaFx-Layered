@@ -20,6 +20,7 @@
         <Label layoutX="31.0" layoutY="19.0" prefHeight="38.0" prefWidth="165.0" text="Category Name :">
             <font><Font size="16.0" /></font>
         </Label>
+        <TextField fx:id="txtId" managed="false" visible="false" />
         <TextField fx:id="txtCategoryName" layoutX="191.0" layoutY="19.0" prefHeight="38.0" prefWidth="320.0" promptText="Enter category name" />
 
         <!-- Buttons -->

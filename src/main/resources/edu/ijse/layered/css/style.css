@@ -49,7 +49,6 @@
    DASHBOARD
    ═══════════════════════════════════════════════════════════════ */
 
-/* Page header */
 .dashboard-page-title {
     -fx-text-fill: -pms-primary;
     -fx-font-size: 22px;
@@ -83,7 +82,6 @@
     -fx-effect: dropshadow(gaussian, rgba(13,124,110,0.15), 12, 0, 0, 3);
 }
 
-/* Danger variant — Low Stock */
 .stat-card-danger {
     -fx-border-color: rgba(192,57,43,0.35);
     -fx-background-color: #FEF9F8;
@@ -94,7 +92,6 @@
     -fx-effect: dropshadow(gaussian, rgba(192,57,43,0.15), 12, 0, 0, 3);
 }
 
-/* Info variant — Today's Orders */
 .stat-card-info {
     -fx-border-color: rgba(26,111,168,0.35);
     -fx-background-color: #F5F9FD;
@@ -105,7 +102,6 @@
     -fx-effect: dropshadow(gaussian, rgba(26,111,168,0.15), 12, 0, 0, 3);
 }
 
-/* Card inner elements */
 .stat-card-icon {
     -fx-font-size: 26px;
 }
@@ -134,7 +130,6 @@
    SIDEBAR
    ═══════════════════════════════════════════════════════════════ */
 
-/* ScrollPane wrapper — fully transparent */
 .sidebar-scroll {
     -fx-background-color: -pms-sidebar-bg;
     -fx-background: -pms-sidebar-bg;
@@ -168,7 +163,6 @@
     -fx-border-color: transparent;
 }
 
-/* Sidebar container */
 .sidebar {
     -fx-background-color: -pms-sidebar-bg;
     -fx-padding: 0;
@@ -318,7 +312,6 @@
     -fx-translate-y: 1px;
 }
 
-
 /* ═══════════════════════════════════════════════════════════════
    CONTENT AREA
    ═══════════════════════════════════════════════════════════════ */
@@ -372,7 +365,6 @@
     -fx-font-size: 14px;
 }
 
-
 /* ═══════════════════════════════════════════════════════════════
    FORM PAGE (AnchorPane sub-pages)
    ═══════════════════════════════════════════════════════════════ */
@@ -388,8 +380,8 @@
     -fx-border-width: 1.5px;
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
-    -fx-padding: 7px 12px;
-    -fx-font-size: 14px;
+    -fx-padding: 6px 12px;
+    -fx-font-size: 13px;
     -fx-text-fill: -pms-text;
     -fx-prompt-text-fill: -pms-muted;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 2, 0, 0, 1);
@@ -412,7 +404,7 @@
     -fx-border-width: 1.5px;
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 2, 0, 0, 1);
     -fx-cursor: hand;
@@ -430,7 +422,7 @@
 
 .combo-box .list-cell {
     -fx-text-fill: -pms-text;
-    -fx-padding: 6px 12px;
+    -fx-padding: 5px 12px;
     -fx-background-color: transparent;
 }
 
@@ -454,7 +446,6 @@
     -fx-background-color: -pms-primary-dark;
 }
 
-/* Dropdown popup */
 .combo-box-popup .list-view {
     -fx-background-color: -pms-surface;
     -fx-border-color: -pms-border;
@@ -467,7 +458,7 @@
 .combo-box-popup .list-view .list-cell {
     -fx-text-fill: -pms-text;
     -fx-font-size: 13px;
-    -fx-padding: 8px 12px;
+    -fx-padding: 6px 12px;
     -fx-background-color: transparent;
     -fx-cursor: hand;
 }
@@ -489,7 +480,7 @@
     -fx-border-width: 1.5px;
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 2, 0, 0, 1);
     -fx-cursor: hand;
@@ -505,14 +496,13 @@
     -fx-effect: dropshadow(gaussian, rgba(13,124,110,0.16), 7, 0, 0, 0);
 }
 
-/* Inner text field — reset inherited styles */
 .date-picker .text-field {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-effect: none;
-    -fx-padding: 7px 4px 7px 12px;
-    -fx-font-size: 14px;
+    -fx-padding: 6px 4px 6px 12px;
+    -fx-font-size: 13px;
     -fx-text-fill: -pms-text;
     -fx-prompt-text-fill: -pms-muted;
 }
@@ -522,7 +512,6 @@
     -fx-effect: none;
 }
 
-/* Calendar icon button */
 .date-picker .arrow-button {
     -fx-background-color: transparent;
     -fx-padding: 0 8px;
@@ -539,7 +528,6 @@
     -fx-background-color: -pms-primary-dark;
 }
 
-/* ── DatePicker popup calendar ────────────────────────────────── */
 .date-picker-popup {
     -fx-background-color: -pms-surface;
     -fx-border-color: -pms-border;
@@ -549,7 +537,6 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 4);
 }
 
-/* Month / Year header */
 .date-picker-popup > * > .month-year-pane {
     -fx-background-color: linear-gradient(to bottom, #0E8878, #0D7C6E);
     -fx-background-radius: 7px 7px 0 0;
@@ -562,7 +549,6 @@
     -fx-font-weight: bold;
 }
 
-/* Prev / Next arrow buttons */
 .date-picker-popup > * > .month-year-pane .button {
     -fx-background-color: rgba(255,255,255,0.16);
     -fx-background-radius: 50%;
@@ -581,7 +567,6 @@
     -fx-background-color: white;
 }
 
-/* Day-of-week header */
 .date-picker-popup .day-name-cell {
     -fx-text-fill: -pms-primary;
     -fx-font-size: 11px;
@@ -590,7 +575,6 @@
     -fx-padding: 4px 0;
 }
 
-/* Day cells */
 .date-picker-popup .day-cell {
     -fx-background-color: transparent;
     -fx-text-fill: -pms-text;
@@ -607,7 +591,6 @@
     -fx-background-radius: 50%;
 }
 
-/* Today */
 .date-picker-popup .today {
     -fx-border-color: -pms-primary-light;
     -fx-border-width: 1.5px;
@@ -616,7 +599,6 @@
     -fx-font-weight: bold;
 }
 
-/* Selected date */
 .date-picker-popup .selected {
     -fx-background-color: -pms-primary;
     -fx-text-fill: white;
@@ -629,26 +611,22 @@
     -fx-background-color: -pms-primary-dark;
 }
 
-/* Other-month days */
 .date-picker-popup .day-cell.other-month {
     -fx-text-fill: -pms-muted;
     -fx-opacity: 0.45;
 }
 
-/* Disabled days */
 .date-picker-popup .day-cell:disabled {
     -fx-text-fill: -pms-muted;
     -fx-opacity: 0.38;
     -fx-cursor: default;
 }
 
-/* Week numbers */
 .date-picker-popup .week-number-cell {
     -fx-text-fill: -pms-muted;
     -fx-font-size: 10px;
     -fx-padding: 0 6px 0 2px;
 }
-
 
 /* ═══════════════════════════════════════════════════════════════
    ACTION BUTTONS
@@ -662,7 +640,7 @@
     -fx-background-radius: 7px;
     -fx-cursor: hand;
     -fx-text-fill: white;
-    -fx-padding: 7px 12px;
+    -fx-padding: 6px 14px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.14), 4, 0, 0, 2);
 }
 
@@ -671,7 +649,6 @@
     -fx-translate-y: 1px;
 }
 
-/* Save — teal */
 .save-btn {
     -fx-background-color: linear-gradient(to bottom, #10907F, #0D7C6E);
     -fx-border-color: #0A6358;
@@ -680,7 +657,6 @@
     -fx-background-color: linear-gradient(to bottom, #13A892, #0D8A7A);
 }
 
-/* Update — blue */
 .update-btn {
     -fx-background-color: linear-gradient(to bottom, #2080BB, #1A6FA8);
     -fx-border-color: #155D8F;
@@ -689,7 +665,6 @@
     -fx-background-color: linear-gradient(to bottom, #2A90CB, #1A7AB8);
 }
 
-/* Delete — red */
 .delete-btn {
     -fx-background-color: linear-gradient(to bottom, #D44035, #C0392B);
     -fx-border-color: #A93226;
@@ -698,7 +673,6 @@
     -fx-background-color: linear-gradient(to bottom, #E04A3F, #CC4035);
 }
 
-/* Reset — neutral grey */
 .reset-btn {
     -fx-background-color: linear-gradient(to bottom, #909EA0, #7F8C8D);
     -fx-border-color: #6C797A;
@@ -707,9 +681,8 @@
     -fx-background-color: linear-gradient(to bottom, #9DAAAC, #8C989A);
 }
 
-
 /* ═══════════════════════════════════════════════════════════════
-   TABLE VIEW
+   TABLE VIEW  —  compact rows
    ═══════════════════════════════════════════════════════════════ */
 
 .table-view {
@@ -731,23 +704,23 @@
 .table-view .filler {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-size: 42px;
+    -fx-size: 34px;
 }
 
 .table-view .column-header .label {
     -fx-text-fill: white;
-    -fx-font-size: 13px;
+    -fx-font-size: 12px;
     -fx-font-weight: bold;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 0 10px;
 }
 
-/* Rows */
+/* Rows — compact */
 .table-row-cell {
     -fx-background-color: -pms-surface;
     -fx-border-color: transparent transparent -pms-border-light transparent;
     -fx-border-width: 0 0 1px 0;
-    -fx-cell-size: 43px;
+    -fx-cell-size: 32px;
 }
 
 .table-row-cell:odd {
@@ -766,7 +739,7 @@
 /* Cells */
 .table-cell {
     -fx-text-fill: -pms-text;
-    -fx-font-size: 13px;
+    -fx-font-size: 12px;
     -fx-padding: 0 10px;
     -fx-alignment: CENTER_LEFT;
 }
@@ -776,12 +749,10 @@
     -fx-font-weight: 600;
 }
 
-/* Remove default focus ring */
 .table-view:focused {
     -fx-background-color: -pms-surface;
 }
 
-/* Scrollbars inside table */
 .table-view .scroll-bar:vertical .thumb,
 .table-view .scroll-bar:horizontal .thumb {
     -fx-background-color: -pms-primary-light;
@@ -794,7 +765,6 @@
     -fx-background-radius: 4px;
 }
 
-/* Empty table placeholder */
 .table-view .placeholder .label {
     -fx-text-fill: -pms-muted;
     -fx-font-size: 13px;

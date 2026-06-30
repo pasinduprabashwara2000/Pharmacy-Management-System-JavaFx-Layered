@@ -1,170 +1,174 @@
 package edu.ijse.layered.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
 
-public class MainMenuController implements Initializable {
-
-    // ── Sidebar buttons ──────────────────────────────────────
-    @FXML
-    private Button btnDashboard;
+public class MainMenuController {
 
     @FXML
     private Button btnCategory;
 
     @FXML
-    private Button btnMedicines;
-
-    @FXML
     private Button btnCustomers;
 
     @FXML
-    private Button btnSuppliers;
+    private Button btnDashboard;
 
     @FXML
     private Button btnEmployees;
 
     @FXML
+    private Button btnLogout;
+
+    @FXML
+    private Button btnMedicines;
+
+    @FXML
     private Button btnOrders;
 
     @FXML
-    private Button btnPrescriptions;
+    private Button btnPayments;
 
     @FXML
     private Button btnReports;
 
     @FXML
-    private Button btnLogout;
+    private Button btnReturn;
 
-    // ── Top bar ──────────────────────────────────────────────
     @FXML
-    private Label lblPageTitle;
+    private Button btnSuppliers;
+
+    @FXML
+    private AnchorPane contentArea;
 
     @FXML
     private Label lblDateTime;
 
     @FXML
-    private Label lblUserName;
-
-    // ── Content area ─────────────────────────────────────────
-    @FXML private StackPane pageContent;
-
-    private Button activeButton;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Set date/time
-        String now = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("dd MMM yyyy  |  hh:mm a"));
-        lblDateTime.setText(now);
-
-        // Default active button
-        setActive(btnDashboard, "Dashboard");
-    }
-
-    // ── Navigation handlers ──────────────────────────────────
+    private Label lblPageTitle;
 
     @FXML
-    private void handleDashboard() {
-        setActive(btnDashboard, "Dashboard");
+    private Label lblUserName;
+
+    @FXML
+    private StackPane pageContent;
+
+    @FXML
+    private VBox sidebar;
+
+    @FXML
+    private ScrollPane sidebarScroll;
+
+    @FXML
+    public void initialize() {
+        lblUserName.setText("Admin");
+        updateDateTime();
+        handleDashboard(null);
+    }
+
+    private void updateDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        lblDateTime.setText(LocalDateTime.now().format(formatter));
+    }
+
+    @FXML
+    void handleDashboard(ActionEvent event) {
+        lblPageTitle.setText("Dashboard");
         loadPage("Dashboard.fxml");
     }
 
     @FXML
-    private void handleCategory() {
-        setActive(btnCategory, "Manage Category");
-        loadPage("ManageCategory.fxml");
-    }
-
-    @FXML
-    private void handleMedicines() {
-        setActive(btnMedicines, "Manage Medicines");
-        loadPage("ManageMedicine.fxml");
-    }
-
-    @FXML
-    private void handleCustomers() {
-        setActive(btnCustomers, "Manage Customers");
+    void handleCustomers(ActionEvent event) {
+        lblPageTitle.setText("Manage Customers");
         loadPage("ManageCustomer.fxml");
     }
 
     @FXML
-    private void handleSuppliers() {
-        setActive(btnSuppliers, "Manage Suppliers");
+    void handleCategory(ActionEvent event) {
+        lblPageTitle.setText("Manage Categories");
+        loadPage("ManageCategory.fxml");
+    }
+
+    @FXML
+    void handleSuppliers(ActionEvent event) {
+        lblPageTitle.setText("Manage Suppliers");
         loadPage("ManageSupplier.fxml");
     }
 
     @FXML
-    private void handleEmployees() {
-        setActive(btnEmployees, "Manage Employees");
+    void handleMedicines(ActionEvent event) {
+        lblPageTitle.setText("Manage Medicines");
+        loadPage("ManageMedicine.fxml");
+    }
+
+    @FXML
+    void handleEmployees(ActionEvent event) {
+        lblPageTitle.setText("Manage Employees");
         loadPage("ManageEmployee.fxml");
     }
 
     @FXML
-    private void handleOrders() {
-        setActive(btnOrders, "Orders");
-        loadPage("Orders.fxml");
+    void handleOrders(ActionEvent event) {
+        lblPageTitle.setText("Orders");
+        loadPage("Order.fxml");
     }
 
     @FXML
-    private void handlePrescriptions() {
-        setActive(btnPrescriptions, "Prescriptions");
-        loadPage("Prescriptions.fxml");
+    void handlePayments(ActionEvent event) {
+        lblPageTitle.setText("Manage Payments");
+        loadPage("ManagePayment.fxml");
     }
 
     @FXML
-    private void handleReports() {
-        setActive(btnReports, "Reports");
-        loadPage("Reports.fxml");
+    void handleReturn(ActionEvent event) {
+        lblPageTitle.setText("Manage Returns");
+        loadPage("ManageReturn.fxml");
     }
 
     @FXML
-    private void handleLogout() {
+    void handleReports(ActionEvent event) {
+        lblPageTitle.setText("Reports");
+        loadPage("Report.fxml");
+    }
+
+    @FXML
+    void handleLogout(ActionEvent event) {
         try {
-            AnchorPane loginPane = FXMLLoader.load(
-                    getClass().getResource("/view/Login.fxml"));
-            pageContent.getScene().setRoot(loginPane);
+            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+
+            Stage stage = (Stage) btnLogout.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+            stage.centerOnScreen();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // ── Helpers ──────────────────────────────────────────────
-
-    /**
-     * Switches the active style class to the chosen nav button
-     * and updates the top-bar page title.
-     */
-    private void setActive(Button target, String title) {
-        if (activeButton != null) {
-            activeButton.getStyleClass().remove("nav-btn-active");
-        }
-        target.getStyleClass().add("nav-btn-active");
-        activeButton = target;
-        lblPageTitle.setText(title);
-    }
-
-    /**
-     * Loads an FXML file into the central content StackPane.
-     */
     private void loadPage(String fxmlFile) {
         try {
-            AnchorPane page = FXMLLoader.load(
-                    getClass().getResource("/edu/ijse/layered/" + fxmlFile));
-            pageContent.getChildren().setAll(page);
+            Parent root = FXMLLoader.load(getClass().getResource("/edu/ijse/layered/"+fxmlFile));
+
+            pageContent.getChildren().clear();
+            pageContent.getChildren().add(root);
+
         } catch (IOException e) {
+            System.err.println("Cannot load: " + fxmlFile);
             e.printStackTrace();
-            System.err.println("Could not load: " + fxmlFile);
         }
     }
 }

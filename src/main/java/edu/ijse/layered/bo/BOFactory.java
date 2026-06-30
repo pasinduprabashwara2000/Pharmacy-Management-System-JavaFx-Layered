@@ -1,8 +1,6 @@
 package edu.ijse.layered.bo;
 
-import edu.ijse.layered.bo.custom.impl.CategoryBOImpl;
-import edu.ijse.layered.bo.custom.impl.CustomerBOImpl;
-import edu.ijse.layered.bo.custom.impl.EmployeeBOImpl;
+import edu.ijse.layered.bo.custom.impl.*;
 
 public class BOFactory {
 
@@ -29,8 +27,12 @@ public class BOFactory {
                 return new CustomerBOImpl();
             case CATEGORY :
                 return new CategoryBOImpl();
+            case SUPPLIER :
+                return new SupplierBOImpl();
             case EMPLOYEE :
                 return new EmployeeBOImpl();
+            case MEDICINE :
+                return new MedicineBOImpl();
         }
         return null;
     }

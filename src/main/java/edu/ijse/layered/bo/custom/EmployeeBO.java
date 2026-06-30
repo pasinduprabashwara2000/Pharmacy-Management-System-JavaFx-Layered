@@ -2,7 +2,6 @@ package edu.ijse.layered.bo.custom;
 
 import edu.ijse.layered.bo.SuperBO;
 import edu.ijse.layered.dto.EmployeeDTO;
-
 import java.util.List;
 
 public interface EmployeeBO extends SuperBO {

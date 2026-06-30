@@ -7,25 +7,24 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "order")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Customer {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    private int orderId;
 
-    private String fullName;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
-    @Column(unique = true)
-    private String email;
+    private String date;
+    private double total;
 
-    @Column(unique = true)
-    private String contactNo;
-
-    @OneToMany(mappedBy = "customer")
-    List<Order> orders;
+    @OneToMany(mappedBy = "order")
+    List<OrderDetails> orderDetails;
 
 }

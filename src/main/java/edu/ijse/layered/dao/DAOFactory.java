@@ -1,8 +1,6 @@
 package edu.ijse.layered.dao;
 
-import edu.ijse.layered.dao.custom.impl.CategoryDAOImpl;
-import edu.ijse.layered.dao.custom.impl.CustomerDAOImpl;
-import edu.ijse.layered.dao.custom.impl.EmployeeDAOImpl;
+import edu.ijse.layered.dao.custom.impl.*;
 
 public class DAOFactory {
 
@@ -20,19 +18,25 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        CUSTOMER, CATEGORY, EMPLOYEE
+        CUSTOMER, CATEGORY, MEDICINE, EMPLOYEE, SUPPLIER
     }
 
     public SuperDAO getDAO(DAOTypes daoTypes){
         switch (daoTypes){
             case CUSTOMER :
                 return new CustomerDAOImpl();
+            case MEDICINE :
+                return new MedicineDAOImpl();
             case CATEGORY :
                 return new CategoryDAOImpl();
             case EMPLOYEE :
                 return new EmployeeDAOImpl();
+            case SUPPLIER :
+                return new SupplierDAOImpl();
         }
+
         return null;
+
     }
 
 
